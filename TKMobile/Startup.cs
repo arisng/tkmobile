@@ -1,6 +1,6 @@
 ﻿using Owin;
 
-namespace IdentitySample
+namespace TKMobile
 {
     public partial class Startup
     {

@@ -1,4 +1,4 @@
-﻿using IdentitySample.Models;
+﻿using TKMobile.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -10,8 +10,10 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using TKMobile.Core.Entities.User;
+using TKMobile.Data;
 
-namespace IdentitySample.Controllers
+namespace TKMobile.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class UsersAdminController : Controller

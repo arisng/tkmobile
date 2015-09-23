@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace IdentitySample
+namespace TKMobile
 {
     public class BundleConfig
     {

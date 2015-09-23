@@ -2,11 +2,13 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using IdentitySample.Models;
+using TKMobile.Models;
 using Owin;
 using System;
+using TKMobile.Data;
+using TKMobile.Core.Entities.User;
 
-namespace IdentitySample
+namespace TKMobile
 {
     public partial class Startup
     {
