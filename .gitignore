@@ -194,3 +194,4 @@ packages*/
 # Make an exception to include NuGet.exe
 *.exe
 !NuGet.exe
+/.vs/config
