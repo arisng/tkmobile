@@ -82,6 +82,11 @@ namespace TKMobile.Controllers
         {
             //Get the list of Roles
             ViewBag.RoleId = new SelectList(await RoleManager.Roles.ToListAsync(), "Name", "Name");
+            ViewBag.Genders = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "Male", Text = "Nam" },
+                new SelectListItem { Value = "Female", Text = "Nữ" }
+            };
             return View();
         }
 
@@ -92,7 +97,15 @@ namespace TKMobile.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = userViewModel.Email, Email = userViewModel.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = userViewModel.Email,
+                    Email = userViewModel.Email,
+                    FirstName = userViewModel.FirstName,
+                    LastName = userViewModel.LastName,
+                    Gender = userViewModel.Gender,
+                    BirthDate = userViewModel.BirthDate.Value
+                };
                 var adminresult = await UserManager.CreateAsync(user, userViewModel.Password);
 
                 //Add User to the selected Roles 

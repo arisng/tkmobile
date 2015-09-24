@@ -119,7 +119,18 @@ namespace TKMobile.Data
             var user = userManager.FindByName(name);
             if (user == null)
             {
-                user = new ApplicationUser { UserName = name, Email = name };
+                user = new ApplicationUser
+                {
+                    UserName = name,
+                    Email = name,
+                    BirthDate = new DateTime(1991, 12, 12),
+                    FirstName = "Anh",
+                    LastName = "Nguyen Duy",
+                    CreatedOn = DateTime.Now,
+                    UpdatedOn = DateTime.Now,
+                    PhoneNumber = "0935571991",
+                    Gender = Gender.Male
+                };
                 var result = userManager.Create(user, password);
                 result = userManager.SetLockoutEnabled(user.Id, false);
             }
