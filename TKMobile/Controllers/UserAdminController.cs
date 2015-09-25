@@ -12,6 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using TKMobile.Core.Entities.User;
 using TKMobile.Data;
+using TKMobile.Extensions;
 
 namespace TKMobile.Controllers
 {
@@ -70,10 +71,11 @@ namespace TKMobile.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             var user = await UserManager.FindByIdAsync(id);
+            var viewModel = user.ToViewModel();
 
             ViewBag.RoleNames = await UserManager.GetRolesAsync(user.Id);
 
-            return View(user);
+            return View(viewModel);
         }
 
         //

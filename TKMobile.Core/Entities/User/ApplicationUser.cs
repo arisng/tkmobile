@@ -31,11 +31,33 @@ namespace TKMobile.Core.Entities.User
         [Required]
         public string LastName { get; set; }
 
+        [NotMapped]
+        [Display(Name = "Họ và Tên")]
+        public string FullName
+        {
+            get
+            {
+                return String.Format("{0} {1}", LastName, FirstName);
+            }
+        }
+
         public DateTime BirthDate { get; set; }
 
+        [NotMapped]
+        [Display(Name = "Ngày sinh")]
+        public string BirthDateString
+        {
+            get
+            {
+                return BirthDate.ToShortDateString();
+            }
+        }
+
         [Required]
+        [Display(Name = "Giới tính")]
         public Gender Gender { get; set; }
 
+        [Display(Name = "Thành phố")]
         public string City { get; set; }
 
         public DateTime CreatedOn { get; set; }
@@ -59,7 +81,7 @@ namespace TKMobile.Core.Entities.User
 
     public enum Gender
     {
-        Male = 1,
-        Female = 2
+        Nam = 1,
+        Nữ = 2
     }
 }

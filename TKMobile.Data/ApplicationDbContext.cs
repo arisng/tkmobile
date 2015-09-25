@@ -129,7 +129,7 @@ namespace TKMobile.Data
                     CreatedOn = DateTime.Now,
                     UpdatedOn = DateTime.Now,
                     PhoneNumber = "0935571991",
-                    Gender = Gender.Male
+                    Gender = Gender.Nam
                 };
                 var result = userManager.Create(user, password);
                 result = userManager.SetLockoutEnabled(user.Id, false);
