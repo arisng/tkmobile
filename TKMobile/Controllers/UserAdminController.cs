@@ -220,7 +220,9 @@ namespace TKMobile.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+
+            var viewModel = user.ToViewModel();
+            return View(viewModel);
         }
 
         //
