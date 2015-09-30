@@ -8,7 +8,8 @@ namespace TKMobile
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-scrolltofixed.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -26,15 +27,19 @@ namespace TKMobile
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/eshopper").Include(
+                "~/Scripts/eshopper/*.js",
+                "~/Scripts/eshopper/jquery.scrollUp.min.js"));
 
-
-
-
+            bundles.Add(new ScriptBundle("~/bundles/ism").Include(
+                "~/Scripts/ism/ism-2.0.1.js"));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                "~/Content/bootstrap.css",
+                "~/Content/font-awesome.css",
+                "~/Content/my-slider.css",
+                "~/Content/eshopper/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/datetime-css").Include(
                 "~/Content/bootstrap-datetimepicker.css"));
