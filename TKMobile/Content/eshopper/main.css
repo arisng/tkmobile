@@ -861,6 +861,11 @@ h2.title {
 
 .single-products {
   position: relative;
+  min-height: 290px;
+}
+
+.single-products img {
+    padding-top: 10px;
 }
 
 .new, .sale {
@@ -891,7 +896,7 @@ h2.title {
 }
 
 .productinfo img{
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .productinfo{
@@ -922,6 +927,10 @@ h2.title {
   bottom: 0;
   text-align: center;
   width: 100%;
+}
+
+.product-overlay .overlay-img {
+    width: 100%;
 }
 
 .product-overlay .add-to-cart {
